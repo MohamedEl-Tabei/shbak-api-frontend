@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Data from "../data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy, faXmarkCircle } from "@fortawesome/free-regular-svg-icons";
+import Components from "../components";
 const Signup = () => {
   let ref = useRef(null);
   let [fName, setFName] = useState("");
@@ -150,13 +151,7 @@ const Signup = () => {
       onSubmit={(e) => onSubmitHandler(e)}
       ref={ref}
     >
-      <nav
-        className={`navbar navbar-expand-lg container-fluid mb-5 ${
-          done ? "Done" : "InProgress"
-        }`}
-      >
-        {done ? "Done" : "In Progress"}
-      </nav>
+      <Components.StatusBar status={done} />
       <div
         className={
           "w-75 d-flex alert alert-danger  d-flex justify-content-center align-items-center p-0"

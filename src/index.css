@@ -12,15 +12,16 @@ code {
     monospace;
 }
 .page-btn {
-  width: 150px;
+  width: 180px;
   margin: 50px;
-  height: 150px;
+  margin-top: 50px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0px;
+  border-radius: 0px;
   font-size: larger;
-  border-radius: 50%;
 }
 .ticket-img {
   width: 350px;
@@ -40,16 +41,31 @@ code {
   background-color: black;
   width: max-content;
   color: azure;
-  padding: 20px 0px;
+  padding: 20px 10px;
 }
 .bg-cinema {
   background-size: cover;
   background-repeat: repeat-x;
   background-image: url("./images/Capture.PNG");
   background-position: -500px;
-
   animation: cinema 180s infinite;
-  height: 400px;
+  height: 50%
+}
+.stop{
+  animation: none ;
+  background-position: center;
+  background-size: contain;
+
+}
+.move{
+  animation: cinema 180s infinite;
+  background-size: contain;
+}
+.text-darkRed{
+  color: #491f23;
+}
+.bg-black{
+  background-color: black;
 }
 @keyframes cinema {
   0% {
@@ -93,4 +109,54 @@ code {
 .InProgress{
   background-color: #c6e4fc;
 
+}
+.btn-warning{
+  color: white;
+  background-color: #c69500;
+  border-color: #c69500;
+}
+.btn-warning:hover{
+  background-color:#9f7903;
+  border-color:#9f7903;
+  color: white;
+}
+.btn-outline-warning{
+  color: #c69500;
+}
+.btn-secondary{
+  background-color: greenyellow;
+}
+.hover-light:hover{
+  background-color: rgb(253, 250, 250) !important;
+  color: inherit !important;
+}
+.h-100vh{
+  height: 100vh;
+}
+.opacity-97{
+  opacity: 97%;
+}
+.btn-hidden{
+  visibility: hidden;
+  height: 0px;
+  margin-top: 0px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #230e10; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #491f23; 
 }

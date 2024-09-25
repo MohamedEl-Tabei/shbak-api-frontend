@@ -1,6 +1,9 @@
 import Logo from "./Logo";
-
-const Components={
-    Logo
-}
-export default Components
+import PaymentForm from "./PaymentForm";
+import StatusBar from "./StatusBar";
+const Components = {
+  Logo,
+  StatusBar,
+  PaymentForm
+};
+export default Components;
