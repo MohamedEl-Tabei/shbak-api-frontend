@@ -147,9 +147,10 @@ const Signup = () => {
   };
   return (
     <div
-      className="d-flex justify-content-center pb-5 flex-column align-items-center "
+      className="d-flex justify-content-center pb-5 flex-column align-items-center bg-dark text-light"
       onSubmit={(e) => onSubmitHandler(e)}
       ref={ref}
+      
     >
       <Components.StatusBar status={done} />
       <div
@@ -158,14 +159,14 @@ const Signup = () => {
         }
       >
         <div
-          className="card bg-danger border-0 w-100  h-mc"
+          className="card bg-red border-0 w-100  h-mc"
           data-bs-theme="dark"
         >
-          <dl className="bg-light p-3">
-            <dt className="text-dark">Data validation</dt>
+          <dl className="bg-dark rounded-top-2  p-3">
+            <dt className="">Data validation</dt>
 
             <dd>
-              <pre
+              <p
                 className="httprequest"
                 title={`post ( "${API.baseURL}user/dataValidation" , {  fName,  lName , email , password , dateOfBirth , phoneNumber } )`}
                 onClick={(e) => copyTextToClipboard(e)}
@@ -173,7 +174,7 @@ const Signup = () => {
                 <FontAwesomeIcon icon={faCopy} /> post ( "{API.baseURL}
                 user/dataValidation" ,{" "}
                 {"{fName,  lName, email, password, dateOfBirth, phoneNumber}"} )
-              </pre>
+              </p>
             </dd>
           </dl>
           <h5 class="card-title text-center pt-3">Errors</h5>
@@ -189,9 +190,10 @@ const Signup = () => {
         </div>
       </div>
       <form
-        className="w-75 shadow p-3 row g-3 mt-3"
+        className="w-75 shadow p-3 row g-3 mt-3  "
         style={{ minHeight: 406.4 }}
-      >
+        data-bs-theme="dark"
+        >
         {step === 2 ? (
           <div className="mb-3 col-md-6">
             <label htmlFor="code" className="form-label">
@@ -232,15 +234,15 @@ const Signup = () => {
         )}
         <div
           className={`${
-            step === 2 || token ? "d-none" : ""
-          } col-md-6 mb-5 form-check`}
+            step === 2 || token ? "d-none" : "d-flex align-items-center"
+          } col-md-6 mb-5 form-check `}
         >
           <input
-            className="form-check-input"
             type="checkbox"
             value={rememberMe}
             id="flexCheckDefault"
             onChange={() => setRememberMe(!rememberMe)}
+            className="me-2"
           />
           <label className="form-check-label" for="flexCheckDefault">
             Remember me
@@ -294,38 +296,38 @@ const Signup = () => {
           </dd>
 
           <dd>
-            <pre
+            <p
               className="httprequest"
               title={`post ( "${API.baseURL} user/emailIsUnique" , {"{email}"} )`}
               onClick={(e) => copyTextToClipboard(e)}
             >
               <FontAwesomeIcon icon={faCopy} /> post ( "{API.baseURL}
               user/emailIsUnique" , {"{email}"} )
-            </pre>
+            </p>
           </dd>
           <dd>
-            <pre
+            <p
               className="httprequest"
               title={`post ( "${API.baseURL} user/phoneIsUnique" , {"{phoneNumber}"} )`}
               onClick={(e) => copyTextToClipboard(e)}
             >
               <FontAwesomeIcon icon={faCopy} /> post ( "{API.baseURL}
               user/phoneIsUnique" , {"{phoneNumber}"} )
-            </pre>
+            </p>
           </dd>
           <dt>Step 3</dt>
           <dd>
             The user sends a request to receive an email containing a code.
           </dd>
           <dd>
-            <pre
+            <p
               className="httprequest"
               title={`post ( "${API.baseURL} user/sendCode" , {"{email}"} )`}
               onClick={(e) => copyTextToClipboard(e)}
             >
               <FontAwesomeIcon icon={faCopy} /> post ( "{API.baseURL}
               user/sendCode" , {"{email}"} )
-            </pre>
+            </p>
           </dd>
           <dt>Step 4</dt>
           <dd>
@@ -333,7 +335,7 @@ const Signup = () => {
             payload.
           </dd>
           <dd>
-            <pre
+            <p
               className="httprequest"
               title={`post ( "${API.baseURL}user/signup" , {  fName,  lName , email , password , dateOfBirth , phoneNumber , code} )`}
               onClick={(e) => copyTextToClipboard(e)}
@@ -344,7 +346,7 @@ const Signup = () => {
                 "{fName,  lName, email, password, dateOfBirth, phoneNumber, code}"
               }{" "}
               )
-            </pre>
+            </p>
           </dd>
           <dt>End</dt>
           <dd>
