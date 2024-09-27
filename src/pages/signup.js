@@ -147,7 +147,7 @@ const Signup = () => {
   };
   return (
     <div
-      className="d-flex justify-content-center pb-5 flex-column align-items-center bg-dark text-light"
+      className="d-flex justify-content-center pb-5 flex-column align-items-center bg-dark text-light opcity0-1"
       onSubmit={(e) => onSubmitHandler(e)}
       ref={ref}
       

@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: black;
 }
 
 code {
@@ -198,4 +199,17 @@ form{
 .btn-primary:disabled{
   background-color: #230e1044;
   border-color: #230e1044;
+}
+.opcity0-1{
+  animation: H2v 1.5s ;
+}
+
+@keyframes H2v {
+  0% {
+    opacity: 0;
+  }
+  
+  100% {
+    opacity: 1;
+  }
 }

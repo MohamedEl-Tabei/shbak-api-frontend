@@ -17,7 +17,7 @@ const Home = () => {
   let stopClass="w-100 bg-white h-25 bg-cinema opacity-75 stop  border-0  ";
   let moveClass="w-100 bg-white h-25 bg-cinema opacity-75 move  border-0 ";
   return (
-    <div className="bg-black h-100vh overflow-hidden">
+    <div className="bg-black h-100vh overflow-hidden opcity0-1">
       <nav
         className="navbar bg-dark  border-body d-flex justify-content-center align-items-center bg-cinema p-0 stop "
         data-bs-theme="dark"
