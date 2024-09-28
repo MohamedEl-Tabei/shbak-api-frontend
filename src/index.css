@@ -94,6 +94,9 @@ code {
   color: #945058 !important;
 
 }
+.text-error{
+  color: #945058;
+}
 .alert-danger{
   background-color: #f8d7da63 !important;
 }

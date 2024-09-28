@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   const Pages = [
     { name: "Signup", color: "danger",},
-    { name: "Login", color: "danger" },
+    { name: "Login & Log out", color: "danger" },
     { name: "Movie", color: "danger" },
     { name: "Tables", color: "danger" },
     { name: "Payment", color: "danger" },
@@ -37,7 +37,7 @@ const Home = () => {
       <div className="d-flex flex-wrap justify-content-center align-items-center overflow-auto h-50 ">
         {Pages.map((page, i) => (
           <Link
-            to={`/${page.name}`}
+            to={`/${i===1?"login":page.name}`}
             key={i}
             className={`page-btn btn btn-${page.color} d-flex flex-column justify-content-between border-0  text-dark hover-light shadow opacity-50 shadow`}
             onMouseOver={(e)=>{
