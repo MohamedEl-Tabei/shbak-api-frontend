@@ -9,7 +9,7 @@ const Login = () => {
   let l = Data.RegisterLabels;
   let labels = [l[0], l[1]];
   let [err, setErr] = useState("Error");
-  let [email, setEmail] = useState("mohamedeltab33y@gmal.com");
+  let [email, setEmail] = useState("mohamedeltab33y@gmail.com");
   let [password, setPassword] = useState("Sh12345**");
   let [rememberMe, setRememberMe] = useState(false);
   let [user, setUser] = useState({ fName: undefined });
