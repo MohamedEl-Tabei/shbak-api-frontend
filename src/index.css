@@ -97,6 +97,7 @@ code {
 .text-error{
   color: #945058;
 }
+
 .alert-danger{
   background-color: #f8d7da63 !important;
 }
@@ -116,16 +117,16 @@ code {
 }
 .btn-warning{
   color: white;
-  background-color: #c69500;
-  border-color: #c69500;
+  background-color: #3f361e;
+  border-color: #3f361e;
 }
 .btn-warning:hover{
-  background-color:#9f7903;
-  border-color:#9f7903;
+  background-color:#785b04;
+  border-color:#785b04;
   color: white;
 }
 .btn-outline-warning{
-  color: #c69500;
+  color: #785b04;
 }
 .btn-secondary{
   background-color: greenyellow;
@@ -206,7 +207,9 @@ form{
 .opcity0-1{
   animation: H2v 1.5s ;
 }
-
+.text-lightYellow{
+  color: #fff3d0;
+}
 @keyframes H2v {
   0% {
     opacity: 0;

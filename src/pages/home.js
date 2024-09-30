@@ -31,7 +31,7 @@ const Home = () => {
           }}
         >
           <Components.Logo />
-          <p className=" opacity-50">SHBAK-API is an api to reserve cinema ticket.</p>
+          <p className=" ">SHBAK-API is an api to reserve cinema ticket.</p>
         </div>
       </nav>
       <div className="d-flex flex-wrap justify-content-center align-items-center overflow-auto h-50 ">

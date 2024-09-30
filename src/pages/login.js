@@ -13,11 +13,11 @@ const Login = () => {
   let [password, setPassword] = useState("Sh12345**");
   let [rememberMe, setRememberMe] = useState(false);
   let [user, setUser] = useState({ fName: undefined });
-  let [loading,setLoading]=useState(false);
+  let [loading, setLoading] = useState(false);
   let logIn = async (event) => {
     try {
       event.preventDefault();
-      setLoading(true)
+      setLoading(true);
       let response = await API.request.post("user/login", {
         email,
         password,
@@ -30,18 +30,17 @@ const Login = () => {
       setLoading(false);
     }
   };
-  let onChangeHandler=(e)=>{
-    let labelName= e.currentTarget.name;
-    let value=e.currentTarget.value;
-    if(labelName==="email")
-      setEmail(value);
+  let onChangeHandler = (e) => {
+    let labelName = e.currentTarget.name;
+    let value = e.currentTarget.value;
+    if (labelName === "email") setEmail(value);
     else setPassword(value);
-  }
+  };
   return (
-    <div className="d-flex  pb-5 flex-column align-items-center bg-dark text-light opcity0-1 h-100vh">
+    <div className="d-flex  pb-5 flex-column align-items-center bg-dark text-light opcity0-1 h-100vh overflow-auto">
       <Components.StatusBar status={false} />
       {user.fName ? (
-        "loged in success"
+        <Components.UserInfo user={user} />//LogOut
       ) : (
         <form
           className=" shadow p-3 row g-3 mt-3  "
@@ -94,7 +93,14 @@ const Login = () => {
               className={`btn btn-primary w-150px me-3 h-mc`}
               disabled={loading}
             >
-              {loading? <span class="spinner-border spinner-border-sm" aria-hidden="true"/>:"Login"}
+              {loading ? (
+                <span
+                  class="spinner-border spinner-border-sm"
+                  aria-hidden="true"
+                />
+              ) : (
+                "Login"
+              )}
             </button>
           </div>
         </form>
@@ -103,7 +109,10 @@ const Login = () => {
         <h4 className="text-center">End points</h4>
         <dl>
           <dt>Login</dt>
-          <dd className="mt-2">If the data is valid, user get token from the response data. Otherwise, the user will receive an error.</dd>
+          <dd className="mt-2">
+            If the data is valid, user get token from the response data.
+            Otherwise, the user will receive an error.
+          </dd>
           <dd>
             <p
               className="httprequest mt-2"
@@ -114,6 +123,9 @@ const Login = () => {
               user/logIn" , {"{email,password,rememberMe}"} )
             </p>
           </dd>
+          <dt>Log out</dt>
+          <dt>Log out from all devices</dt>
+
         </dl>
       </div>
     </div>
