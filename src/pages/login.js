@@ -107,7 +107,7 @@ const Login = () => {
           <dd>
             <p
               className="httprequest mt-2"
-              title={`post ( "${API.baseURL} user/emailIsUnique" , {"{email}"} )`}
+              title={`Copy end point`}
               onClick={(e) => Util.copyTextToClipboard(e)}
             >
               <FontAwesomeIcon icon={faCopy} /> post ( "{API.baseURL}

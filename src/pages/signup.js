@@ -168,7 +168,7 @@ const Signup = () => {
             <dd>
               <p
                 className="httprequest"
-                title={`post ( "${API.baseURL}user/dataValidation" , {  fName,  lName , email , password , dateOfBirth , phoneNumber } )`}
+                title={`Copy end point`}
                 onClick={(e) => copyTextToClipboard(e)}
               >
                 <FontAwesomeIcon icon={faCopy} /> post ( "{API.baseURL}
@@ -298,7 +298,7 @@ const Signup = () => {
           <dd>
             <p
               className="httprequest"
-              title={`post ( "${API.baseURL} user/emailIsUnique" , {"{email}"} )`}
+              title={`Copy end point`}
               onClick={(e) => copyTextToClipboard(e)}
             >
               <FontAwesomeIcon icon={faCopy} /> post ( "{API.baseURL}
@@ -308,7 +308,7 @@ const Signup = () => {
           <dd>
             <p
               className="httprequest"
-              title={`post ( "${API.baseURL} user/phoneIsUnique" , {"{phoneNumber}"} )`}
+              title={`Copy end point`}
               onClick={(e) => copyTextToClipboard(e)}
             >
               <FontAwesomeIcon icon={faCopy} /> post ( "{API.baseURL}
@@ -322,7 +322,7 @@ const Signup = () => {
           <dd>
             <p
               className="httprequest"
-              title={`post ( "${API.baseURL} user/sendCode" , {"{email}"} )`}
+              title={`Copy end point`}
               onClick={(e) => copyTextToClipboard(e)}
             >
               <FontAwesomeIcon icon={faCopy} /> post ( "{API.baseURL}
@@ -337,7 +337,7 @@ const Signup = () => {
           <dd>
             <p
               className="httprequest"
-              title={`post ( "${API.baseURL}user/signup" , {  fName,  lName , email , password , dateOfBirth , phoneNumber , code} )`}
+              title={`Copy end point`}
               onClick={(e) => copyTextToClipboard(e)}
             >
               <FontAwesomeIcon icon={faCopy} /> post ( "{API.baseURL}
