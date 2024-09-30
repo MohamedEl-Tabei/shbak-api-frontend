@@ -13,19 +13,30 @@ const Login = () => {
   let [password, setPassword] = useState("Sh12345**");
   let [rememberMe, setRememberMe] = useState(false);
   let [user, setUser] = useState({ fName: undefined });
+  let [loading,setLoading]=useState(false);
   let logIn = async (event) => {
     try {
       event.preventDefault();
+      setLoading(true)
       let response = await API.request.post("user/login", {
         email,
         password,
         rememberMe,
       });
       setUser({ ...response.data });
+      setLoading(false);
     } catch (error) {
       setErr(error.response.data);
+      setLoading(false);
     }
   };
+  let onChangeHandler=(e)=>{
+    let labelName= e.currentTarget.name;
+    let value=e.currentTarget.value;
+    if(labelName==="email")
+      setEmail(value);
+    else setPassword(value);
+  }
   return (
     <div className="d-flex  pb-5 flex-column align-items-center bg-dark text-light opcity0-1 h-100vh">
       <Components.StatusBar status={false} />
@@ -51,10 +62,9 @@ const Login = () => {
                   placeholder={label.placeholder}
                   name={label.name}
                   required
-                  // onChange={(e) => onChangeHandler(e)}
-                  value={i == 0 ? email : password}
-                  //disabled={token}
-                  // onBlur={async () => await dataValidation()}
+                  onChange={(e) => onChangeHandler(e)}
+                  value={i === 0 ? email : password}
+                  disabled={user.token}
                 />
               </div>
             );
@@ -64,7 +74,7 @@ const Login = () => {
               type="checkbox"
               value={rememberMe}
               id="flexCheckDefault"
-              //onChange={() => setRememberMe(!rememberMe)}
+              onChange={() => setRememberMe(!rememberMe)}
               className="me-2"
             />
             <label className="form-check-label" for="flexCheckDefault">
@@ -73,7 +83,7 @@ const Login = () => {
           </div>
           <small
             className={`text-center mb-3 text-error ${
-              err == "Error" ? "invisible" : ""
+              err === "Error" ? "invisible" : ""
             }`}
           >
             {err}
@@ -82,9 +92,9 @@ const Login = () => {
             <button
               type="submit"
               className={`btn btn-primary w-150px me-3 h-mc`}
-              // onClick={() => setStep(1)}
+              disabled={loading}
             >
-              Login
+              {loading? <span class="spinner-border spinner-border-sm" aria-hidden="true"/>:"Login"}
             </button>
           </div>
         </form>
@@ -93,6 +103,7 @@ const Login = () => {
         <h4 className="text-center">End points</h4>
         <dl>
           <dt>Login</dt>
+          <dd className="mt-2">If the data is valid, user get token from the response data. Otherwise, the user will receive an error.</dd>
           <dd>
             <p
               className="httprequest mt-2"
